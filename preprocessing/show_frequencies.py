@@ -199,37 +199,5 @@ sorted_x = sorted(x.items(), key=lambda kv: kv[1])
 for row in sorted_x[::-1] :
     print( row )
 
-#bigram_measures = nltk.collocations.BigramAssocMeasures()
-#trigram_measures = nltk.collocations.TrigramAssocMeasures()
-
-
-#tokens = nltk.wordpunct_tokenize(finaltext)
-#finder = BigramCollocationFinder.from_words(tokens)
-#scored = finder.score_ngrams(bigram_measures.raw_freq)
-#r = sorted(bigram for bigram, score in scored)
-
-#print(r)
-
-#Word cloud
-
-#from os import path
-#from PIL import Image
-#from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
-#import matplotlib.pyplot as plt
-#% matplotlib inline
-#wordcloud = WordCloud(
-#                      background_color='white',
-#                      stopwords=[],
-#                      max_words=1000,
-#                      max_font_size=50,
-#                      random_state=42
-#                      ).generate(finaltext)
-#print(wordcloud)
-#fig = plt.figure(1)
-#plt.imshow(wordcloud)
-#plt.axis('off')
-#plt.show()
-#fig.savefig("word1.png", dpi=2000)
-
 
 
