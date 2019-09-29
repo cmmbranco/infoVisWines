@@ -12,9 +12,10 @@ from itertools import tee
 from collections import defaultdict
 from operator import itemgetter
 from math import log
+import stopwrds as stwrds
 
 file_content = open("descriptioncorpus.txt").read()
-new_words = ["drink","like"]
+new_words = stwrds.new_words
 
 def standart_text_normalize(source_text, costum_stopwords = []):
 
@@ -41,7 +42,8 @@ def standart_text_normalize(source_text, costum_stopwords = []):
     
     #Lemmatisation
     lem = WordNetLemmatizer()
-    text = [lem.lemmatize(word) for word in text if not word in stop_words]
+    text = [lem.lemmatize(word) for word in text if (not word in stop_words) and (not lem.lemmatize(word) in stop_words)]
+    ## redu
 
     finaltext = " ".join(text)
 
@@ -198,6 +200,7 @@ sorted_x = sorted(x.items(), key=lambda kv: kv[1])
 
 for row in sorted_x[::-1] :
     print( row )
+
 
 
 
